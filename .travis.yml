@@ -1,0 +1,22 @@
+language: java
+sudo: required
+services:
+  - docker
+jdk:
+  - oraclejdk8
+
+env:
+  matrix:
+    - POSTGRES_VERSION=9.3
+
+script:
+  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  - export COMMIT=${TRAVIS_COMMIT::8}
+  - export REPO=datascienceplatform/dogresd
+  - export NICE_BRANCH_NAME=$(echo $TRAVIS_BRANCH | sed -e 's/\//_/g')
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo "$NICE_BRANCH_NAME" ; fi`
+  - docker build -t $REPO:$COMMIT .
+  - docker tag $REPO:$COMMIT $REPO:$TAG-$POSTGRES_VERSION
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER-$POSTGRES_VERSION
+  - docker tag $REPO:$COMMIT $REPO:$COMMIT-$POSTGRES_VERSION
+  - docker push $REPO
