@@ -27,7 +27,7 @@ Docker image with ssh including postgres tools
 
 Providing an SSH with PostgreSQL tools
 ```
-POSTGRES_VERSION=9.3; \
+POSTGRES_VERSION=9.6; \
 DOGRES_HOST_PORT=8022; \
 DOGRES_CONTAINER_PORT=22; \
 sudo docker run -d -p ${DOGRES_HOST_PORT}:${DOGRES_CONTAINER_PORT} \
