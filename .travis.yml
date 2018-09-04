@@ -17,7 +17,6 @@ script:
   - export NICE_BRANCH_NAME=$(echo $TRAVIS_BRANCH | sed -e 's/\//_/g')
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo "$NICE_BRANCH_NAME" ; fi`
   - docker build --build-arg POSTGRES_VERSION=${POSTGRES_VERSION} -t $REPO:$COMMIT .
-  - set -x
   - docker tag $REPO:$COMMIT $REPO:$TAG-$POSTGRES_VERSION
   - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER-$POSTGRES_VERSION
   - docker tag $REPO:$COMMIT $REPO:$COMMIT-$POSTGRES_VERSION
