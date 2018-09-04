@@ -23,6 +23,8 @@ COPY sshd_config.template /etc/ssh/sshd_config.template
 
 RUN mkdir /ssh-keys
 
+RUN mkdir /workdir
+
 COPY docker-entrypoint.sh .
 
 RUN chmod u+x docker-entrypoint.sh

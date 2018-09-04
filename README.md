@@ -38,6 +38,7 @@ sudo docker run -d -p ${DOGRES_HOST_PORT}:${DOGRES_CONTAINER_PORT} \
   -v /etc/nsswitch.conf:/etc/nsswitch.conf:ro \
   -v /etc/ldap.conf:/etc/ldap.conf:ro \
   -v /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro \
+  -v $(pwd):/workdir \
   -e LDAP_MATCH_GROUP=postgres \
   -e DOGRES_SSH_PORT=${DOGRES_CONTAINER_PORT} \
   datascienceplatform/dogresd:latest-${POSTGRES_VERSION}
