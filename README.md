@@ -1,5 +1,9 @@
 # Dogres
 
+- travis-ci.org [![Build Status](https://travis-ci.org/Data-Science-Platform/dogres.svg?branch=master)](https://travis-ci.org/Data-Science-Platform/dogres)
+- travis-ci.com [![Build Status](https://travis-ci.com/Data-Science-Platform/dogres.svg?branch=master)](https://travis-ci.com/Data-Science-Platform/dogres)
+- docker hub [![Docker Pulls](https://img.shields.io/docker/pulls/datascienceplatform/dogresd.svg?maxAge=2592000)](https://hub.docker.com/r/datascienceplatform/dogresd/)
+
 Docker image with ssh including postgres tools
 
 - clusterdb
