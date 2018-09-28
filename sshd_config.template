@@ -47,7 +47,7 @@ PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
-ChallengeResponseAuthentication no
+ChallengeResponseAuthentication yes
 
 # Change to no to disable tunnelled clear text passwords
 PasswordAuthentication no
@@ -84,7 +84,7 @@ AcceptEnv LANG LC_*
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-UsePAM no
+UsePAM yes
 
 AllowGroups $LDAP_MATCH_GROUP
 
