@@ -35,7 +35,6 @@ sudo docker run -d -p ${DOGRES_HOST_PORT}:${DOGRES_CONTAINER_PORT} \
   -v /etc/localtime:/etc/localtime:ro \
   -v /etc/timezone:/etc/timezone:ro \
   -v /etc/pam.d/common-session:/etc/pam.d/common-session:ro \
-  -v /etc/nsswitch.conf:/etc/nsswitch.conf:ro \
   -v /etc/ldap.conf:/etc/ldap.conf:ro \
   -v /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro \
   -v $(pwd):/workdir \
