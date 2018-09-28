@@ -17,6 +17,7 @@ RUN \
       sudo \
       ca-certificates \
       fortune \
+      libnss-ldap ldap-utils \
       openssh-server && \
   apt-get clean all
 
