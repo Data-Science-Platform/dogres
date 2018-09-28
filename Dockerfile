@@ -5,7 +5,10 @@ ARG POSTGRES_VERSION
 RUN echo "POSTGRES_VERSION="${POSTGRES_VERSION}
 
 RUN \
+  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+  touch /etc/libnss-ldap.conf /etc/pam_ldap.conf && \
   apt-get -qq update && \
+  DEBIAN_FRONTEND=noninteractive \
   apt-get -qq install --yes \
       curl \
       wget \
