@@ -21,8 +21,16 @@ RUN \
       ca-certificates \
       fortune \
       libnss-ldap ldap-utils \
-      openssh-server && \
+      openssh-server \
+      locales && \
   apt-get clean all
+
+RUN export LANGUAGE=en_US.UTF-8 && \
+  export LANG=en_US.UTF-8 && \
+  export LC_ALL=en_US.UTF-8 && \
+  locale-gen en_US.UTF-8 && \
+  DEBIAN_FRONTEND=noninteractive \
+  dpkg-reconfigure locales
 
 RUN echo "POSTGRES_VERSION="${POSTGRES_VERSION}
 
