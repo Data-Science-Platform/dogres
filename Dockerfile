@@ -30,7 +30,8 @@ RUN export LANGUAGE=en_US.UTF-8 && \
   export LC_ALL=en_US.UTF-8 && \
   locale-gen en_US.UTF-8 && \
   DEBIAN_FRONTEND=noninteractive \
-  dpkg-reconfigure locales
+  dpkg-reconfigure locales && \
+  echo 'export LC_ALL="en_US.UTF-8"'>> /etc/profile
 
 RUN echo "POSTGRES_VERSION="${POSTGRES_VERSION}
 
