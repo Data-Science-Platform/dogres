@@ -87,3 +87,4 @@ AcceptEnv LANG LC_*
 UsePAM yes
 
 AllowGroups $LDAP_MATCH_GROUP
+
