@@ -48,6 +48,7 @@ RUN mkdir /var/run/sshd
 
 COPY sshd_config.template /etc/ssh/sshd_config.template
 COPY nsswitch.conf /etc/nsswitch.conf
+COPY config/sshd /etc/pam.d/sshd
 
 RUN mkdir /ssh-keys
 
