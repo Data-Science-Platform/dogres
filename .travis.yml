@@ -8,6 +8,7 @@ jdk:
 env:
   matrix:
     - POSTGRES_VERSION=9.3
+    - POSTGRES_VERSION=9.5
     - POSTGRES_VERSION=9.6
 
 script:
